@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NETPIXL — DevOps, Cloud, Linux &amp; AI Solutions</title>
+<meta name="description" content="Netpixl is a technology studio delivering Linux, DevOps, Cloud and AI agent solutions: reliable infrastructure and smarter automation.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&family=Vazirmatn:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04061a;--bg2:#070b25;--card:#0a1133;--line:#18285a;--c1:#27d3ff;--c2:#7c5cff;--c3:#ff4fd8;--tx:#e8edff;--mu:#9aa8d0;--hd:#04061ae8;--fb:'Inter','Vazirmatn',sans-serif;--fh:'Space Grotesk','Vazirmatn',sans-serif}
+[data-theme=light]{--bg:#f3f6ff;--bg2:#e9eefc;--card:#fff;--line:#d3dcf5;--tx:#0a1233;--mu:#4a5985;--hd:#f3f6ffe8}
+:lang(fa){--fb:'Vazirmatn',sans-serif;--fh:'Vazirmatn',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--fb);background:var(--bg);color:var(--tx);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+:lang(fa) body{line-height:1.95}
+a{color:inherit;text-decoration:none}img,svg{max-width:100%}
+.wrap{max-width:1180px;margin:auto;padding-inline:22px}
+section{padding:88px 0;position:relative}
+.alt{background:linear-gradient(180deg,transparent,var(--bg2) 14%,var(--bg2) 86%,transparent)}
+.grad{background:linear-gradient(95deg,var(--c1),var(--c2) 55%,var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.eb{font:600 .74rem/1 'JetBrains Mono',monospace;letter-spacing:.2em;color:var(--c1);text-transform:uppercase;margin-bottom:12px;direction:ltr;text-align:start}
+h2{font:700 clamp(1.7rem,3.2vw,2.4rem)/1.25 var(--fh);margin-bottom:12px}
+.sub{color:var(--mu);max-width:620px;margin-bottom:38px}
+.card{background:linear-gradient(155deg,color-mix(in srgb,var(--card) 90%,var(--c2)),var(--card));border:1px solid var(--line);border-radius:18px;padding:24px;transition:.35s;position:relative}
+.card:hover{border-color:var(--c1);box-shadow:0 0 0 1px #27d3ff44,0 16px 46px -14px #27d3ff66;transform:translateY(-4px)}
+.card h3{font:600 1.04rem/1.4 var(--fh);margin-bottom:6px}.card p{color:var(--mu);font-size:.88rem}
+.ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;background:#ffffffee;box-shadow:0 0 0 1px #27d3ff88,0 0 22px #7c5cff77}
+.ic img{width:30px;height:30px}
+.btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;padding:12px 26px;border-radius:999px;font:500 .9rem var(--fb);border:1px solid var(--c2);background:color-mix(in srgb,var(--bg) 70%,var(--c2));color:var(--tx);cursor:pointer;transition:.3s;box-shadow:0 0 22px #7c5cff55}
+.btn:hover{border-color:var(--c1);box-shadow:0 0 32px #27d3ffaa;transform:translateY(-2px)}
+.btn.f{background:linear-gradient(95deg,var(--c2),var(--c1));border:0;color:#04061a;font-weight:600}
+.btn.s{padding:8px 18px;font-size:.82rem}
+[dir=rtl] .ar{display:inline-block;transform:scaleX(-1)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:26px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;direction:ltr}
+.tags span{font:.7rem 'JetBrains Mono',monospace;padding:3px 10px;border-radius:7px;background:#27d3ff14;border:1px solid #27d3ff44;color:var(--c1)}
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--hd);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:18px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.15rem var(--fh);letter-spacing:.2em;direction:ltr}
+.logo svg{filter:drop-shadow(0 0 8px #27d3ff99)}
+.links{display:flex;gap:22px;margin-inline:auto;font-size:.88rem;color:var(--mu)}
+.links a{position:relative;padding:4px 0;transition:.2s}.links a:hover{color:var(--c1)}
+.links a:after{content:"";position:absolute;inset-inline:0;bottom:-2px;height:2px;background:linear-gradient(90deg,var(--c1),var(--c2));transform:scaleX(0);transition:.3s}.links a:hover:after{transform:scaleX(1)}
+.act{display:flex;gap:10px;align-items:center}
+.pill{height:36px;min-width:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--tx);cursor:pointer;font:600 .78rem var(--fb);transition:.2s}.pill:hover{border-color:var(--c1)}
+#bg{display:none}
+/* hero */
+.hero{padding:0;overflow:hidden;border-bottom:1px solid var(--line);--tx:#e8edff;--mu:#aab7de;color:var(--tx);background:radial-gradient(700px 420px at 80% 30%,#7c5cff44,transparent 70%),radial-gradient(500px 360px at 5% 90%,#27d3ff22,transparent 70%),linear-gradient(180deg,#050722,#0a0b33)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(#27d3ff14 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,#27d3ff14 1px,transparent 1px) 0 0/48px 48px;-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 75%)}
+.hw{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-block:64px 72px}
+.chip{display:inline-flex;gap:10px;align-items:center;font:600 .74rem 'JetBrains Mono',monospace;letter-spacing:.14em;padding:7px 16px;border-radius:999px;border:1px solid #27d3ff66;background:#27d3ff14;color:var(--c1);margin-bottom:22px;direction:ltr}
+.chip:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c1);box-shadow:0 0 10px var(--c1)}
+.hero h1{font:700 clamp(2.3rem,5vw,3.7rem)/1.12 var(--fh);margin-bottom:18px}
+.hero .lead{color:var(--mu);max-width:520px;font-size:1.02rem}
+.cta{display:flex;gap:14px;margin:30px 0 28px;flex-wrap:wrap}
+.sup{display:inline-flex;gap:12px;align-items:center;padding:6px 18px 6px 6px;border:1px solid #ffffff22;border-radius:999px;background:#0a1038aa;font-size:.8rem;color:var(--mu)}
+[dir=rtl] .sup{padding:6px 6px 6px 18px}
+.sup img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--c2)}.sup b{color:var(--tx);font-weight:600}
+.poster{position:relative;border-radius:22px;padding:2px;background:conic-gradient(from 160deg,var(--c1),var(--c2),var(--c3),var(--c1));box-shadow:0 0 70px #7c5cff88,0 0 140px #27d3ff22;animation:fl 6s ease-in-out infinite}
+.poster img{display:block;width:100%;height:auto;border-radius:20px}
+@keyframes fl{50%{transform:translateY(-10px)}}
+/* tech */
+.tk{border-bottom:1px solid var(--line);padding:26px 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.trk{display:flex;gap:16px;width:max-content;animation:mq 40s linear infinite;direction:ltr}.tk:hover .trk{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.tc{display:flex;align-items:center;gap:12px;padding:8px 20px 8px 8px;border:1px solid var(--line);border-radius:999px;background:var(--card);font:600 .76rem 'JetBrains Mono',monospace;letter-spacing:.06em;color:var(--mu)}
+.tc i{width:36px;height:36px;border-radius:50%;background:#fffffff0;display:grid;place-items:center}.tc img{width:22px;height:22px}
+/* about */
+.ab{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.st .card{padding:16px;text-align:center}.st b{display:block;font:700 1.9rem var(--fh)}.st span{font-size:.76rem;color:var(--mu)}
+.pl{display:grid;grid-template-columns:1fr 1fr;gap:16px}.pl .card{padding:20px}
+.nm{font:700 .8rem 'JetBrains Mono',monospace;color:var(--c3);margin-bottom:8px;direction:ltr;text-align:start}
+/* process */
+.pr{counter-reset:s}.pr .card:before{counter-increment:s;content:"0" counter(s);position:absolute;top:14px;inset-inline-end:18px;font:700 2.3rem var(--fh);color:#7c5cff44}
+.pr .card:after{content:"";position:absolute;inset-inline:24px;bottom:0;height:2px;background:linear-gradient(90deg,var(--c1),var(--c3));opacity:.7}
+/* learning */
+.tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.tab{padding:8px 22px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--mu);cursor:pointer;font:500 .85rem var(--fb);transition:.2s}
+.tab.on{background:linear-gradient(95deg,#7c5cff55,#27d3ff33);border-color:var(--c2);color:var(--tx)}
+.pane{display:none}.pane.on{display:grid}
+.dt{display:flex;gap:8px;align-items:center;font:600 .7rem 'JetBrains Mono',monospace;color:var(--c1);margin-bottom:8px;letter-spacing:.08em;direction:ltr}.dt img{width:20px;height:20px;background:#fff;border-radius:5px;padding:2px}
+.lv{margin-top:12px;font-size:.76rem;color:var(--c3);font-weight:500}
+/* lead */
+.ld{display:grid;grid-template-columns:340px 1fr;gap:34px;align-items:stretch}
+.who{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.av{width:210px;height:210px;border-radius:50%;padding:5px;background:conic-gradient(from 200deg,var(--c1),var(--c2),var(--c3),var(--c1));box-shadow:0 0 50px #7c5cff88;margin-bottom:18px}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:5px solid var(--card);display:block}
+.who h3{font-size:1.4rem}.who .rl{color:var(--c1);font-size:.84rem;font-weight:500;margin:4px 0 14px}
+.tl{position:relative;display:grid;gap:14px;padding-inline-start:30px;margin-top:6px}
+.tl:before{content:"";position:absolute;inset-inline-start:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--c1),var(--c2),var(--c3))}
+.tl>div{position:relative}.tl>div:before{content:"";position:absolute;inset-inline-start:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--c2);box-shadow:0 0 12px var(--c2)}
+.tl h4{font:600 .98rem var(--fh)}.tl p{font-size:.84rem}
+/* contact */
+.ci{display:flex;gap:14px;align-items:center;margin-bottom:14px;color:var(--mu);font-size:.92rem}.ci .ic{width:40px;height:40px;margin:0;font-size:1rem;flex:none;color:#04061a;font-weight:700}
+form{display:grid;gap:12px}
+input,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 16px;color:var(--tx);font:.92rem var(--fb);transition:.2s}
+input:focus,textarea:focus{outline:0;border-color:var(--c1);box-shadow:0 0 18px #27d3ff44}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mu);font-size:.82rem;background:var(--bg2)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(max-width:1020px){.g4{grid-template-columns:1fr 1fr}.links{gap:14px}.ld{grid-template-columns:1fr}}
+@media(max-width:860px){
+.links{display:none;position:absolute;top:68px;inset-inline:0;background:var(--bg);flex-direction:column;padding:18px 22px;gap:14px;border-bottom:1px solid var(--line)}.links.open{display:flex}
+#bg{display:block}.cv{display:none}
+.hw,.ab,.g2,.g3{grid-template-columns:1fr}.hw{padding-block:44px 56px;gap:34px}.hero .lead{max-width:100%}section{padding:64px 0}}
+@media(max-width:520px){.g4,.pl,.st{grid-template-columns:1fr 1fr}.pl{grid-template-columns:1fr}.cta .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="n1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5ff0ff"/><stop offset="1" stop-color="#1b7bff"/></linearGradient>
+<linearGradient id="n2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#27a9ff"/><stop offset="1" stop-color="#9a4dff"/></linearGradient>
+<linearGradient id="n3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b86bff"/><stop offset="1" stop-color="#ff4fd8"/></linearGradient>
+<symbol id="lg" viewBox="0 0 40 40"><path d="M5 35V9l9-4v26z" fill="url(#n1)"/><path d="M5 9l9-4 21 26-9 4z" fill="url(#n2)"/><path d="M26 35V9l9-4v26z" fill="url(#n3)"/><path d="M5 9l9-4v9z" fill="#ffffff44"/></symbol></defs></svg>
+
+<header><div class="wrap"><nav>
+<a href="#home" class="logo"><svg width="34" height="34"><use href="#lg"/></svg>NETPIXL</a>
+<div class="links" id="links"><a href="#home" data-fa="خانه">Home</a><a href="#about" data-fa="درباره ما">About</a><a href="#services" data-fa="خدمات">Services</a><a href="#process" data-fa="روش کار">Process</a><a href="#projects" data-fa="پروژه‌ها">Projects</a><a href="#learning" data-fa="آموزش">Learning</a><a href="#lead" data-fa="سرپرست">Lead</a><a href="#contact" data-fa="تماس">Contact</a></div>
+<div class="act"><button class="pill" id="th" aria-label="Theme">◐</button><button class="pill" id="lb" aria-label="Language">فارسی</button><a class="btn f s cv" href="#contact" data-fa="شروع پروژه">Start a Project</a><button class="pill" id="bg" aria-label="Menu">☰</button></div>
+</nav></div></header>
+
+<main>
+<section class="hero" id="home" style="padding:0"><div class="wrap hw">
+<div><div class="chip">DEVOPS · CLOUD · AI</div>
+<h1><span data-fa="زیرساخت پایدار.">Reliable Infrastructure.</span><br><span class="grad" data-fa="اتوماسیون هوشمندتر.">Smarter Automation.</span></h1>
+<p class="lead" data-fa="نتپیکسل یک استودیوی فناوری است که راهکارهای لینوکس، DevOps، کلاد و هوش مصنوعی ارائه می‌دهد؛ تا کسب‌وکار شما سریع‌تر، امن‌تر و بدون دردسر مقیاس پیدا کند.">Netpixl is a technology studio delivering Linux, DevOps, Cloud and AI agent solutions, so your business can ship faster, stay secure and scale without friction.</p>
+<div class="cta"><a class="btn f" href="#contact"><span data-fa="شروع پروژه">Start a Project</span> <span class="ar">→</span></a><a class="btn" href="#services" data-fa="مشاهده خدمات">Explore Services</a></div>
+<a class="sup" href="#lead"><img src="assets/profile.jpg" alt="Majid Hafez"><span data-fa="تحت سرپرستی <b>مجید حافظ</b>">Under the supervision of <b>Majid Hafez</b></span></a></div>
+<div class="poster"><img src="assets/poster.jpg" alt="Neon AI and cloud infrastructure illustration" width="640" height="520"></div>
+</div></section>
+
+<div class="tk"><div class="trk" id="trk"></div></div>
+
+<section id="about"><div class="wrap ab rv">
+<div><div class="eb">About Netpixl</div><h2 data-fa="ما سیستم‌هایی می‌سازیم که بدون وقفه کار می‌کنند">We Build Systems That Just Keep Running</h2>
+<p style="color:var(--mu)" data-fa="نتپیکسل با بیش از ۱۰ سال تجربه عملی در توسعه نرم‌افزار، زیرساخت و اتوماسیون، سازمان‌ها را از طراحی تا اجرا و پایش همراهی می‌کند. هدف ما ساده است: زیرساختی که رشد شما را ممکن کند، نه محدود.">Backed by 10+ years of hands-on experience in software, infrastructure and automation, Netpixl guides organizations from design to delivery and day-two operations. Our goal is simple: infrastructure that enables your growth instead of limiting it.</p>
+<div class="st"><div class="card"><b class="grad">10+</b><span data-fa="سال تجربه">Years of Experience</span></div><div class="card"><b class="grad">50+</b><span data-fa="پروژه موفق">Projects Delivered</span></div><div class="card"><b class="grad">20+</b><span data-fa="گواهینامه">Certifications</span></div></div></div>
+<div class="pl">
+<div class="card"><div class="nm">01 / BUILD</div><h3 data-fa="می‌سازیم">We Build</h3><p data-fa="پلتفرم‌های ابری و سرویس‌های مقیاس‌پذیر.">Cloud platforms and scalable services.</p></div>
+<div class="card"><div class="nm">02 / AUTOMATE</div><h3 data-fa="خودکار می‌کنیم">We Automate</h3><p data-fa="CI/CD و IaC برای حذف کار تکراری.">CI/CD and IaC to remove repetitive work.</p></div>
+<div class="card"><div class="nm">03 / SECURE</div><h3 data-fa="امن می‌کنیم">We Secure</h3><p data-fa="سخت‌سازی، دسترسی و پشتیبان‌گیری.">Hardening, access control and backups.</p></div>
+<div class="card"><div class="nm">04 / EVOLVE</div><h3 data-fa="رشد می‌دهیم">We Evolve</h3><p data-fa="مانیتورینگ و بهبود مستمر با AI.">Monitoring and continuous improvement with AI.</p></div></div>
+</div></section>
+
+<section id="services" class="alt"><div class="wrap rv"><div class="eb">Services</div><h2 data-fa="چه خدماتی ارائه می‌کنیم؟">What We Do for You</h2><p class="sub" data-fa="از پروژه‌های لینوکسی تا راهکارهای هوش مصنوعی؛ یک شریک فنی برای کل چرخه.">From Linux projects to AI-powered automation: one technical partner for the whole lifecycle.</p>
+<div class="g3">
+<div class="card"><div class="ic"><img data-i="linux" alt=""></div><h3 data-fa="پروژه‌های لینوکس">Linux Administration</h3><p data-fa="راه‌اندازی، بهینه‌سازی، امن‌سازی و عیب‌یابی سرور.">Server setup, optimization, hardening and troubleshooting.</p><div class="tags"><span>Ubuntu</span><span>RHEL</span><span>Bash</span></div></div>
+<div class="card"><div class="ic"><img data-i="gitlab" alt=""></div><h3 data-fa="DevOps و CI/CD">DevOps &amp; CI/CD</h3><p data-fa="پایپ‌لاین خودکار ساخت، تست و استقرار.">Automated build, test and deploy pipelines.</p><div class="tags"><span>GitLab</span><span>Docker</span><span>Git</span></div></div>
+<div class="card"><div class="ic"><img data-i="kubernetes" alt=""></div><h3 data-fa="کلاد و کوبرنتیز">Cloud &amp; Kubernetes</h3><p data-fa="طراحی و مدیریت زیرساخت مقیاس‌پذیر.">Design and operate scalable infrastructure.</p><div class="tags"><span>K8s</span><span>Helm</span><span>Terraform</span></div></div>
+<div class="card"><div class="ic"><img data-i="ansible" alt=""></div><h3 data-fa="اتوماسیون و IaC">Automation &amp; IaC</h3><p data-fa="حذف کارهای دستی با کد.">Replace manual work with reproducible code.</p><div class="tags"><span>Ansible</span><span>Terraform</span><span>Python</span></div></div>
+<div class="card"><div class="ic"><img data-i="grafana" alt=""></div><h3 data-fa="مانیتورینگ و Observability">Monitoring &amp; Observability</h3><p data-fa="دید کامل به سلامت سیستم با هشدار هوشمند.">Full visibility into system health with smart alerts.</p><div class="tags"><span>Prometheus</span><span>Grafana</span><span>Zabbix</span></div></div>
+<div class="card"><div class="ic"><img src="assets/github-copilot.png" alt=""></div><h3 data-fa="راهکارهای هوش مصنوعی">AI Solutions</h3><p data-fa="دستیار LLM، AI Agent و اتوماسیون هوشمند.">LLM assistants, AI agents and intelligent automation.</p><div class="tags"><span>LLM</span><span>Agents</span><span>FastAPI</span></div></div>
+</div></div></section>
+
+<section id="process"><div class="wrap rv"><div class="eb">How we work</div><h2 data-fa="روش کار ما">A Simple, Proven Process</h2><p class="sub" data-fa="چهار مرحله شفاف از ایده تا عملیات پایدار.">Four clear steps from idea to stable operations.</p>
+<div class="g4 pr">
+<div class="card"><h3 data-fa="کشف">Discover</h3><p data-fa="نیازها، ریسک‌ها و وضعیت فعلی را بررسی می‌کنیم.">We assess your goals, risks and current state.</p></div>
+<div class="card"><h3 data-fa="طراحی">Design</h3><p data-fa="معماری و نقشه راه مناسب را طراحی می‌کنیم.">We shape the right architecture and roadmap.</p></div>
+<div class="card"><h3 data-fa="اجرا و خودکارسازی">Automate</h3><p data-fa="پیاده‌سازی با کد، تست و مستندات.">We implement with code, tests and documentation.</p></div>
+<div class="card"><h3 data-fa="پایش و بهبود">Operate</h3><p data-fa="مانیتورینگ، پشتیبانی و بهینه‌سازی مداوم.">We monitor, support and keep improving.</p></div></div>
+</div></section>
+
+<section id="projects" class="alt"><div class="wrap rv"><div class="eb">Featured projects</div><h2 data-fa="راهکارهای واقعی">Real-World Solutions</h2><p class="sub" data-fa="نمونه‌ای از کارهایی که تحویل داده‌ایم.">A selection of what we deliver.</p>
+<div class="g3">
+<div class="card"><div class="ic"><img data-i="kubernetes" alt=""></div><h3 data-fa="پلتفرم Kubernetes">Kubernetes Platform</h3><p data-fa="کلاستر آماده تولید با GitOps و مانیتورینگ.">Production-ready cluster with GitOps and monitoring.</p><div class="tags"><span>K8s</span><span>GitLab</span><span>Helm</span></div></div>
+<div class="card"><div class="ic"><img data-i="gitlab" alt=""></div><h3 data-fa="پایپ‌لاین CI/CD امن">Secure CI/CD Pipeline</h3><p data-fa="استقرار خودکار با اسکن امنیتی و تست.">Automated delivery with security scanning and tests.</p><div class="tags"><span>GitLab</span><span>Docker</span><span>Terraform</span></div></div>
+<div class="card"><div class="ic"><img src="assets/github-copilot.png" alt=""></div><h3 data-fa="دستیار هوشمند DevOps">AI DevOps Assistant</h3><p data-fa="دستیار مبتنی بر LLM برای اتوماسیون عملیات.">LLM-based assistant for operations automation.</p><div class="tags"><span>Python</span><span>OpenAI</span><span>FastAPI</span></div></div>
+</div></div></section>
+
+<section id="learning"><div class="wrap rv"><div class="eb">Learning &amp; articles</div><h2 data-fa="آموزش و اشتراک دانش">Learn With Netpixl</h2><p class="sub" data-fa="مقالات و دوره‌های عملی DevOps، لینوکس و هوش مصنوعی.">Practical articles and courses on DevOps, Linux and AI.</p>
+<div class="tabs"><button class="tab on" data-t="a" data-fa="مقالات">Articles</button><button class="tab" data-t="c" data-fa="دوره‌ها">Courses</button></div>
+<div class="pane g3 on" id="a">
+<a href="#" class="card"><div class="dt"><img data-i="kubernetes" alt="">KUBERNETES</div><h3 data-fa="بهترین روش‌ها برای Kubernetes در پروداکشن">Kubernetes Best Practices for Production</h3><p data-fa="امنیت، منابع، Probe و استراتژی استقرار.">Security, resources, probes and rollouts.</p></a>
+<a href="#" class="card"><div class="dt"><img data-i="gitlab" alt="">CI/CD</div><h3 data-fa="راهنمای کامل CI/CD با GitLab">CI/CD with GitLab: Complete Guide</h3><p data-fa="از اولین Runner تا استقرار چندمحیطی.">From your first runner to multi-environment delivery.</p></a>
+<a href="#" class="card"><div class="dt"><img data-i="linux" alt="">LINUX</div><h3 data-fa="تیونینگ عملکرد لینوکس">Linux Performance Tuning</h3><p data-fa="تحلیل گلوگاه CPU، RAM، دیسک و شبکه.">Finding CPU, memory, disk and network bottlenecks.</p></a>
+<a href="#" class="card"><div class="dt"><img src="assets/github-copilot.png" alt="">AI</div><h3 data-fa="ساخت AI Agent با پایتون">Building AI Agents with Python</h3><p data-fa="عامل‌های هوشمند با LLM و ابزارها.">LLM agents that use real tools.</p></a>
+<a href="#" class="card"><div class="dt"><img data-i="grafana" alt="">MONITORING</div><h3 data-fa="Prometheus و Grafana">Monitoring with Prometheus &amp; Grafana</h3><p data-fa="متریک، هشدار و داشبورد حرفه‌ای.">Metrics, alerting and production dashboards.</p></a>
+<a href="#" class="card"><div class="dt"><img data-i="ansible" alt="">ANSIBLE</div><h3 data-fa="اتوماسیون با Ansible">Infrastructure Automation with Ansible</h3><p data-fa="پلی‌بوک و Role قابل‌استفاده‌مجدد.">Clean, reusable playbooks and roles.</p></a></div>
+<div class="pane g3" id="c">
+<div class="card"><div class="dt"><img data-i="linux" alt="">LINUX</div><h3 data-fa="دوره جامع لینوکس (LPIC)">Complete Linux Course (LPIC)</h3><p data-fa="از مقدمات تا مدیریت پیشرفته سرور.">Fundamentals to advanced server administration.</p><div class="lv" data-fa="مبتدی تا پیشرفته">Beginner → Advanced</div></div>
+<div class="card"><div class="dt"><img data-i="docker" alt="">DEVOPS</div><h3 data-fa="دوره DevOps از صفر">DevOps Bootcamp</h3><p data-fa="Docker، CI/CD، Ansible، Terraform و مانیتورینگ.">Docker, CI/CD, Ansible, Terraform and monitoring.</p><div class="lv" data-fa="متوسط">Intermediate</div></div>
+<div class="card"><div class="dt"><img data-i="kubernetes" alt="">KUBERNETES</div><h3 data-fa="کوبرنتیز کاربردی">Hands-on Kubernetes</h3><p data-fa="راه‌اندازی، شبکه، ذخیره‌سازی و GitOps.">Setup, networking, storage and GitOps.</p><div class="lv" data-fa="متوسط تا پیشرفته">Intermediate → Advanced</div></div>
+<div class="card"><div class="dt"><img data-i="python" alt="">AI</div><h3 data-fa="AI Agent برای مهندسان">AI Agents for Engineers</h3><p data-fa="دستیارهای LLM برای اتوماسیون واقعی.">LLM assistants for real automation.</p><div class="lv" data-fa="متوسط">Intermediate</div></div>
+<div class="card"><div class="dt"><img data-i="bash" alt="">SCRIPTING</div><h3 data-fa="اسکریپت‌نویسی و اتوماسیون">Scripting &amp; Automation</h3><p data-fa="Bash و Python برای مهندسان زیرساخت.">Bash and Python for infrastructure engineers.</p><div class="lv" data-fa="مبتدی">Beginner</div></div>
+<div class="card"><div class="dt"><img data-i="git" alt="">1:1</div><h3 data-fa="منتورینگ خصوصی">Private Mentoring</h3><p data-fa="نقشه راه شخصی برای ورود به DevOps.">A personal roadmap into DevOps.</p><div class="lv"><a href="#contact" data-fa="درخواست جلسه">Book a session</a> <span class="ar">→</span></div></div></div>
+</div></section>
+
+<section id="lead" class="alt"><div class="wrap rv"><div class="eb">Led by</div><h2 data-fa="تحت سرپرستی">Under the Supervision Of</h2>
+<div class="ld">
+<div class="card who"><div class="av"><img src="assets/profile.jpg" alt="Majid Hafez" width="200" height="200"></div><h3>Majid Hafez</h3><div class="rl" data-fa="مهندس DevOps و لیدر فنی">DevOps Engineer &amp; Technical Lead</div><a class="btn s" href="assets/resume.html" download><span data-fa="دانلود رزومه">Download CV</span> ↓</a></div>
+<div class="card"><h3 data-fa="خلاصه رزومه">Résumé Highlights</h3><p style="margin-bottom:16px" data-fa="بیش از ۱۰ سال تجربه در ساخت نرم‌افزار، رهبری تیم و اجرای پروژه‌های DevOps و هوش مصنوعی.">10+ years building software, leading teams and delivering DevOps and AI projects.</p>
+<div class="tl">
+<div><h4 data-fa="توسعه نرم‌افزار و رهبری تیم">Software Development &amp; Team Leadership</h4><p data-fa="توسعه Full-Stack، معماری سیستم و منتورینگ تیم‌ها.">Full-stack development, system architecture and team mentoring.</p></div>
+<div><h4 data-fa="DevOps و زیرساخت">DevOps &amp; Infrastructure</h4><p data-fa="لینوکس، Docker، Kubernetes، CI/CD، مجازی‌سازی و شبکه.">Linux, Docker, Kubernetes, CI/CD, virtualization and networking.</p></div>
+<div><h4 data-fa="کلاد و هوش مصنوعی">Cloud &amp; AI</h4><p data-fa="راهکارهای Cloud-Native و AI Agent برای اتوماسیون.">Cloud-native solutions and AI agents for automation.</p></div></div>
+<div class="tags"><span>Linux</span><span>Docker</span><span>Kubernetes</span><span>CI/CD</span><span>GitOps</span><span>Ansible</span><span>Monitoring</span><span>AWS</span></div></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap g2 rv" style="align-items:start;gap:56px">
+<div><div class="eb">Contact</div><h2 data-fa="بیایید پروژه بعدی را شروع کنیم">Let's Build Something Reliable</h2>
+<p style="color:var(--mu);margin-bottom:26px" data-fa="پروژه یا ایده‌ای دارید؟ برای من بنویسید؛ در کوتاه‌ترین زمان پاسخ می‌دهیم.">Have a project or an idea? Write to us and we'll reply as soon as possible.</p>
+<div class="ci"><div class="ic">@</div><a href="mailto:majid.hafezghoran27@gmail.com" style="direction:ltr">majid.hafezghoran27@gmail.com</a></div>
+<div class="ci"><div class="ic"><img data-i="github" alt=""></div><span><a href="https://github.com/MajidHafez/" style="direction:ltr">GitHub</a> · <a href="https://www.linkedin.com/in/majid-hafez" style="direction:ltr">LinkedIn</a> · <a href="https://telegram.me/gladiolus15" style="direction:ltr">Telegram</a></span></div></div>
+<form class="card" id="f"><input name="n" placeholder="Your name" data-ph="نام شما" required><input name="e" type="email" placeholder="Email" data-ph="ایمیل" required><textarea name="m" rows="5" placeholder="Tell us about your project" data-ph="درباره پروژه‌تان بنویسید" required></textarea><button class="btn f"><span data-fa="ارسال پیام">Send Message</span> <span class="ar">→</span></button></form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><a href="#home" class="logo"><svg width="28" height="28"><use href="#lg"/></svg>NETPIXL</a><div data-fa="زیرساخت بهتر · اتوماسیون هوشمندتر · فردایی قوی‌تر">Better Infrastructure · Smarter Automation · A Stronger Tomorrow</div><div>© 2026 Netpixl</div></div></footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const D="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/";
+const ic=n=>D+n+"/"+n+"-original.svg";
+$$("img[data-i]").forEach(i=>i.src=ic(i.dataset.i));
+const T=[["linux","Linux"],["docker","Docker"],["kubernetes","Kubernetes"],["terraform","Terraform"],["prometheus","Prometheus"],["grafana","Grafana"],["ansible","Ansible"],["python","Python"],["gitlab","GitLab"],["nginx","Nginx"],["bash","Bash"],["postgresql","PostgreSQL"],["redis","Redis"],["git","Git"]];
+const row=T.map(([k,n])=>`<div class="tc"><i><img src="${ic(k)}" alt="" loading="lazy"></i>${n}</div>`).join("");
+$("#trk").innerHTML=row+row;
+$$("[data-fa]").forEach(e=>e.dataset.en=e.innerHTML);
+const st=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(e){}};
+function lang(l){const d=document.documentElement;d.lang=l;d.dir=l=="fa"?"rtl":"ltr";
+$$("[data-fa]").forEach(e=>e.innerHTML=l=="fa"?e.dataset.fa:e.dataset.en);
+$$("[data-ph]").forEach(e=>{e.dataset.pe=e.dataset.pe||e.placeholder;e.placeholder=l=="fa"?e.dataset.ph:e.dataset.pe});
+$("#lb").textContent=l=="fa"?"EN":"فارسی";st("l",l)}
+$("#lb").onclick=()=>lang(document.documentElement.lang=="fa"?"en":"fa");
+function theme(t){document.documentElement.dataset.theme=t;st("t",t)}
+$("#th").onclick=()=>theme(document.documentElement.dataset.theme=="dark"?"light":"dark");
+if(st("t"))theme(st("t"));if(st("l")=="fa")lang("fa");
+$("#bg").onclick=()=>$("#links").classList.toggle("open");
+$("#links").onclick=()=>$("#links").classList.remove("open");
+$$(".tab").forEach(b=>b.onclick=()=>{$$(".tab,.pane").forEach(x=>x.classList.remove("on"));b.classList.add("on");$("#"+b.dataset.t).classList.add("on")});
+const io=new IntersectionObserver(a=>a.forEach(x=>x.isIntersecting&&x.target.classList.add("in")),{threshold:.08});
+$$(".rv").forEach(x=>io.observe(x));
+// Contact form opens the visitor's mail client (works on GitHub Pages). Swap for Formspree for direct delivery.
+$("#f").onsubmit=e=>{e.preventDefault();const d=new FormData(e.target);location.href="mailto:majid.hafezghoran27@gmail.com?subject="+encodeURIComponent("Message from "+d.get("n"))+"&body="+encodeURIComponent(d.get("m")+"\n\n"+d.get("e"))};
+</script>
+</body>
+</html>

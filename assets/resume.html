@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Majid Hafez - Resume</title>
+<style>
+  @page { size: A4; margin: 12mm 15mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Arial, sans-serif;
+    margin: 0; padding: 0; background: #f1f5f9; color: #1e293b;
+    line-height: 1.8; font-size: 13px;
+  }
+  .container {
+    direction: ltr; text-align: left;
+    max-width: 840px; margin: 20px auto; background: #ffffff;
+    padding: 35px 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-radius: 18px;
+  }
+  
+  /* Header Section */
+  header {
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 25px;
+  }
+  .header-right { display: flex; direction: ltr; align-items: center; gap: 20px; }
+  .profile-img {
+    width: 95px; height: 95px; border-radius: 50%; background: #0f172a;
+    color: #38bdf8; display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: bold; border: 2px solid #0284c7; box-shadow: 0 4px 10px rgba(2,132,199,0.15);
+    overflow: hidden; flex-shrink: 0;
+  }
+  .profile-img img { width: 100%; height: 100%; object-fit: cover; }
+  
+  .header-info h1 { margin: 0 0 6px 0; font-size: 20px; color: #0f172a; font-weight: 500; }
+  .header-info h2 { margin: 0; font-size: 15px; font-weight: 600; color: #0284c7; }
+
+  /* Contact Box */
+  .contact-box {
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 12px 16px; text-align: left; font-size: 11.5px; color: #334155;
+    display: flex; flex-direction: column; gap: 6px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    direction: ltr;
+  }
+  .contact-item { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+  .contact-item svg { width: 14px; height: 14px; fill: #0284c7; flex-shrink: 0; }
+
+  /* Section Title */
+  section { margin-bottom: 22px; }
+  .section-title {
+    font-size: 14.5px; font-weight: 700; color: #0f172a;
+    margin-bottom: 15px; display: flex; align-items: center; gap: 8px;
+    border-bottom: 2px solid #0284c7; padding-bottom: 4px;
+  }
+  .section-title svg { width: 18px; height: 18px; fill: #0284c7; }
+
+  /* Rectangular Boxes Layout */
+  .box-card {
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 15px 18px; margin-bottom: 12px;
+    
+  }
+  .box-card2 {
+    background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+    padding: 15px 18px; margin-bottom: 12px;
+    direction: ltr;
+    text-align: left;
+  }
+  p.desc { text-align: left; color: #334155; margin: 0; font-size: 12.5px; line-height: 1.8; }
+
+  /* Skills Grid Box */
+  .skills-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    text-align: left;
+    direction: ltr;
+    text-align: left;
+}
+  .skill-row { display: flex; align-items: baseline; font-size: 11.5px; }
+  .skill-row strong { min-width: 200px; color: #0f172a; font-size: 12.5px; font-weight: 700; display: flex; align-items: center; gap: 3px; }
+  .skill-row strong::before { content: '▪'; color: #0284c7; }
+  .skill-row span { color: #334155; flex: 1; direction: ltr; text-align: left; }
+
+  /* Soft Skills Badges */
+  .soft-skills-container {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .soft-skill-badge {
+    background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;
+    padding: 5px 12px; border-radius: 6px; font-weight: 600; font-size: 12px;
+  }
+
+  /* Experience Cards */
+  .job-block {
+    background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #0284c7;
+    border-radius: 4px 8px 8px 4px; padding: 16px 20px; margin-bottom: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+  .job-title { font-weight: 700; color: #0f172a; font-size: 14px; }
+  .company-name { color: #0284c7; }
+  .job-date { color: #64748b; font-size: 10px; font-weight: 300; direction: ltr; }
+  .job-sub { font-size: 11.5px; color: #64748b; margin-bottom: 10px; font-style: italic; }
+  
+  ul.bullet-list { margin: 6px 0 0 0; padding-left: 18px; color: #334155; }
+  ul.bullet-list li { margin-bottom: 3px; text-align: left; font-size: 10.5px; }
+
+  /* Highlights Box */
+  .value-box {
+    background: #f0f9ff; border: 1px solid #bae6fd; border-left: 4px solid #0284c7;
+    padding: 12px 16px; border-radius: 4px; font-size: 12.5px; color: #0369a1; margin-top: 8px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .container { box-shadow: none; padding: 0; margin: 0; max-width: 100%; }
+    .job-block, .box-card, .skills-box { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="header-right">
+      <!-- Profile Photo -->
+      <div class="profile-img">
+         <img src="https://avatars.githubusercontent.com/u/132941468?v=4" alt="Majid Hafez">
+      </div>
+      <div class="header-info">
+        <h1>Majid Hafezghoran</h1>
+        <h2> DevOps & Infrastructure Engineer</h2>
+      </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-box">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span><a href="mailto:majid.hafezghoran27@gmail.com" style="direction:ltr">majid.hafezghoran27@gmail.com</a></span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span>+98 998 195 0784</span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.6 1.6 0 0 0-1.6 1.6c0 .88.72 1.6 1.6 1.6s1.6-.72 1.6-1.6c0-.88-.72-1.6-1.6-1.6z"/></svg>
+        <span><a href="https://www.linkedin.com/in/majid-hafez" style="direction:ltr">linkedin.com/in/majid-hafez</a></span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.44c.55.09.73-.24.73-.53v-1.87c-3.05.66-3.7-1.47-3.7-1.47-.5-1.27-1.22-1.61-1.22-1.61-1-.68.08-.66.08-.66 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.56 1.2 3.19.92.1-.71.38-1.2.7-1.48-2.44-.28-5-1.22-5-5.44 0-1.2.43-2.18 1.14-2.95-.11-.28-.49-1.4.11-2.91 0 0 .92-.3 3.03 1.13a10.5 10.5 0 015.52 0c2.1-1.43 3.02-1.13 3.02-1.13.6 1.51.22 2.63.11 2.91.71.77 1.14 1.75 1.14 2.95 0 4.23-2.57 5.16-5.02 5.43.39.34.74 1.01.74 2.04v3.03c0 .29.18.63.74.52A11 11 0 0012 1.27"/></svg>
+        <span><a href="https://github.com/MajidHafez/" style="direction:ltr">github.com/MajidHafez</a></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Professional Summary -->
+  <section>
+    <div class="section-title">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      Professional Summary
+    </div>
+    <div class="box-card">
+      <p class="desc">
+        IT and DevOps professional with more than 7 years of focused experience in Linux server administration, process automation, containerized environments, and technical team coordination and leadership. Experienced in leading software development teams across web and mobile application projects, Python-based automation and development, and infrastructure support for AI projects, including approximately two years of focused work on Health AI. Strong follow-through and ownership mindset, with a focus on tracking tasks to completion, identifying and resolving technical issues, and ensuring that problems are properly addressed rather than simply worked around. Passionate about continuous improvement, infrastructure standardization, service reliability, and security. Experienced in effectively leveraging AI tools as part of technical workflows to improve productivity, evaluate solutions, enhance implementation quality, and support more standardized and secure engineering practices. Committed to continuous learning and working effectively in dynamic, Cloud-Native environments.
+      </p>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section>
+    <div class="section-title">
+      <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+      Hard Skills (Technical Skills)
+    </div>
+    <div class="skills-box">
+      <div class="skill-row">
+        <strong>DevOps & Containers:</strong>
+        <span>Docker, Dockerfile, Docker Compose, Kubernetes, Helm, Ansible</span>
+      </div>
+      <div class="skill-row">
+        <strong>CI/CD & IaC:</strong>
+        <span>Git, GitLab CI/CD, Terraform (IaC Basics)</span>
+      </div>
+      <div class="skill-row">
+        <strong>Linux & Web Services:</strong>
+        <span>Linux Administration (LPIC-1, LPIC-2), Nginx, HAProxy, Keepalived, Systemd, Bash</span>
+      </div>
+      <div class="skill-row">
+        <strong>Automation & Scripting:</strong>
+        <span>Python (Process Automation, Dataset Cleaning, API Integration)</span>
+      </div>
+      <div class="skill-row">
+        <strong>Monitoring & Cloud:</strong>
+        <span>Prometheus, Grafana, Zabbix, Veeam Backup, AWS Basics</span>
+      </div>
+      <div class="skill-row">
+        <strong>Database:</strong>
+        <span>MySQL, MariaDB, Redis</span>
+      </div>
+      <div class="skill-row">
+        <strong>Network & Security:</strong>
+        <span>CCNA, CCNP R&S, MCSE 2016, VCP, MTCNA, Kerio, Enterprise VPNs, SSO Systems</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soft Skills -->
+  <section>
+    <div class="section-title">
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      Soft Skills
+    </div>
+    <div class="box-card">
+      <div class="soft-skills-container">
+        <span class="soft-skill-badge">Effective Communication</span>
+        <span class="soft-skill-badge">Leadership</span>
+        <span class="soft-skill-badge">Teamwork</span>
+        <span class="soft-skill-badge">Collaboration</span>
+        <span class="soft-skill-badge">Problem Solving</span>
+        <span class="soft-skill-badge">Public Speaking</span>
+      </div>
+    </div>
+  </section>
+  <div>
+
+  </div>
+  <!-- Professional Experience -->
+  <section>
+    <div class="section-title">
+      <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+      Professional Experience
+    </div>
+    
+    <div class="job-block">
+      <div class="job-header">
+        <span class="job-title"><span class="company-name"> Farzan Institute for Knowledge, Research & Technology</span> | IT Lead & Software Infrastructure Lead</span>
+        <!--<span class="job-date">Feb 2019 – Jul 2026</span>-->
+      </div>
+      <div class="job-sub">Feb 2019 – Jul 2026</div>
+      <div class="job-sub">(International operations under HekmaSolutions in Oman and NovareaGroup in Canada)</div>
+      <div class="job-sub"> Career path: IT Specialist → IT Coordinator → IT Manager → Infrastructure & Software Servers Lead </div>
+      
+      <strong>Infrastructure & DevOps:</strong>
+      <ul class="bullet-list">
+        <li>Monitored and maintained the availability of servers, services, and backend services supporting the company’s web and mobile applications.</li>
+        <li>Managed and maintained infrastructure services and internal servers, investigating and resolving system- and service-level issues.</li>
+        <li>Converted approximately 12 Django-based SSO services from Screen-based execution to independent systemd services.</li>
+        <li>Developed Python scripts to automatically recover internal server services after power outages and notify users of service status via Telegram.</li>
+        <li>Implemented an on-premise organizational GitLab and migrated code repositories from GitLab Online; monitored code currency and ensured successful software test execution.</li>
+        <li>Deployed and maintained separate VPN servers for employees and management teams and prepared periodic reports.</li>
+        <li>Planned and executed backup processes for applications, databases, internal servers, and websites using Veeam, with regular backup health checks.</li>
+        <li>Updated and maintained the Jitsi-based consultation and meeting service.</li>
+      </ul>
+    
+      <strong>Automation & Internal Tools:</strong>
+      <ul class="bullet-list">
+        <li>Developed and implemented organizational automation tools in Python, including scripts for database and service testing and validation.</li>
+        <li>Developed a Python application to collect and filter PubMed researcher and professor information by geographic location and research area for email marketing workflows.</li>
+        <li>Developed Python tools to clean and standardize AI project datasets for model training and language-model processing workflows.</li>
+        <li>Designed and implemented the initial version of an organizational AI assistant.</li>
+      </ul>
+    
+      <strong>Technical Team Leadership & Project Management:</strong>
+      <ul class="bullet-list">
+        <li>Led, coordinated, and managed software development teams across Frontend, Backend, Java, Kotlin, and web and mobile application development.</li>
+        <li>Coordinated software development, infrastructure, and other technical teams and followed up on service development and delivery.</li>
+        <li>Prepared technical and management reports and conducted internal and international meetings and presentations with teams and management.</li>
+        <li>Transitioned project management and tracking from traditional Scrum practices to Trello and structured task and project-status tracking.</li>
+        <li>Established and managed documentation and knowledge-management processes using Confluence, Notion, and Jira.</li>
+        <li>Documented systems, new services, APIs, dependencies, and service relationships.</li>
+        <li>Evaluated the feasibility of transitioning from a monolithic architecture to microservices and assessed the required infrastructure and technical considerations.</li>
+        <li>Created and maintained technical documentation covering infrastructure, services, operational processes, and system component relationships.</li>
+      </ul>
+    </div>
+
+    <div class="job-block">
+      <div class="job-header">
+        <span class="job-title"><span class="company-name">Iran Insurance University</span> | Network & Systems Specialist</span>
+        <!--<span class="job-date">2015 – 2016</span>-->
+      </div>
+      <div class="job-sub">2015 – 2016</div>
+      <ul class="bullet-list">
+        <li>Supported and maintained the Active Directory domain network, DNS/DHCP services, and user access.</li>
+        <li>Configured and troubleshot network switches and provided technical support to staff.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education & Training -->
+  <section>
+    <div class="section-title">
+      <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+      Education & Training
+    </div>
+    <div class="box-card2">
+      <ul class="bullet-list" style="padding-left:15px; margin:0;">
+        <li><strong>B.Sc. in Information Technology (IT)</strong></li>
+        <li><strong>DevOps Engineer Course (120 Hours):</strong> 
+        <br>Hands-on training in Linux, Docker, K8s, Helm, GitLab CI, ArgoCD, Ansible, Zabbix, Prometheus, Grafana, ELK, AWS, Terraform</li>
+        <li><strong>DevOps in Action - Packops</strong></li>
+        <li><strong>DevOps Fundamentals - Packops</strong></li>
+        <li><strong>Linux For DevOps - Packops</strong></li>
+        <li><strong>Docker (40 Hours) - GandoTech</strong></li>
+        <li><strong>Ansible (40 Hours) - GandoTech</strong></li>
+        <li><strong>LPIC-2 (50 Hours) - GandoTech</strong></li>
+        <li><strong>LPIC-1 (50 Hours ) - GoToClass</strong></li>
+        <li><strong>Monitoring Stack & DevOps in Action - Packops</strong></li>  
+        <li><strong>CCNA & CCNP Routing & Switching - Rayan College / Rahin System</strong></li>
+        <li><strong>MCSE 2016, VCP & MTCNA - Rahin System</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Professional Values -->
+  <section>
+    <div class="section-title">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      Professional Values
+    </div>
+    <div class="value-box">
+        - Strong sense of responsibility and commitment to organizational goals and assigned responsibilities<br>
+- Continuously developing DevOps knowledge and actively learning new technologies to improve existing processes.<br>
+- Strong interest in teamwork and continuous individual and team growth
+  
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
